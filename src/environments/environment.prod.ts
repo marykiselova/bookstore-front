@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL : "http://0.0.0.0:3000/api"
+  API_URL : "https://murmuring-spire-15069.herokuapp.com/api"
 };
