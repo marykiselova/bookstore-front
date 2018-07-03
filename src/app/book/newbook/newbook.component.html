@@ -1,0 +1,16 @@
+<div class="card mb-3" *ngIf="isLoggedIn">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="name">Book name</label>
+      <input class="form-control" id="name" placeholder="Enter name" [(ngModel)]="name">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="saveBook()">Save</button>
+    <div class="form-group mt-3">
+      <div class="alert alert-danger" role="alert" *ngIf="saveError">
+        Name is not unique
+      </div>
+    </div>
+  </div>
+</div>

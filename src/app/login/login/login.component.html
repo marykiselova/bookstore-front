@@ -1,0 +1,25 @@
+<div class="card mb-3" *ngIf="!isLoggedIn">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input class="form-control" id="username" placeholder="Enter username" [(ngModel)]="username">
+
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter Password" [(ngModel)]="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="doLogin()">Login</button>
+    <div class="form-group mt-3" *ngIf="loginError">
+      <div class="alert alert-danger" role="alert">
+        {{loginError}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="alert alert-success mb-3" role="alert" *ngIf="isLoggedIn">
+  You are logged in! Add new books please.
+  <button class="btn btn-primary ml-3" (click)="doLogout()" *ngIf="isLoggedIn">Logout</button>
+</div>
+

@@ -1,0 +1,6 @@
+<div class="holder" infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="50" [fromRoot]="true" (scrolled)="onScroll()">
+    <div *ngFor="let book of books; let i=index">
+      {{i+1}}. {{book.name}}
+    </div>  
+</div>    
+     
