@@ -1,6 +1,18 @@
 <div class="holder" infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="50" [fromRoot]="true" (scrolled)="onScroll()">
     <div *ngFor="let book of books; let i=index">
-      {{i+1}}. {{book.name}}
+      {{i+1}}. {{book.name}} <span class="badge badge-success">{{book.price | currency:'EUR'}}</span>
+    
+      <div class="input-group mb-3" *ngIf="isLoggedIn">
+         
+          <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" [(ngModel)]="book.price" placeholder="Enter price">
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" (click)="updatePrice(book)">Update</button>
+            </div>
+        </div>
+        
+          
+
+      
     </div>  
 </div>    
      

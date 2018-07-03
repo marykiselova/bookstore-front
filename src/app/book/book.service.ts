@@ -26,4 +26,9 @@ export class BookService {
     return this.http.post(environment.API_URL + "/books", { name: name })
       .pipe(map((response) => <Book>response));
   }
+
+  public update(book: Book): Observable<Book> {
+    return this.http.patch(environment.API_URL + "/books/" + book.id, { name: book.name, price: book.price })
+      .pipe(map((response) => <Book>response));
+  }
 }
